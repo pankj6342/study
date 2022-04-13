@@ -1,0 +1,25 @@
+nav img{
+    margin: 10px auto 50px auto;
+    border-radius: 10px;
+}
+.nav-ele>a{
+    margin: 5px;
+    height: 50px;
+    font-size: 1.5em;
+    position: relative;
+    display: inline-block;
+}
+.nav-ele>a::after{
+    content: "";
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    bottom: 0;
+    -webkit-transition: width .2s;
+    width: 0;
+    transition: width .2s;
+    border-bottom: 2px solid black;
+}
+.nav-ele>a:hover::after{
+    width: 100%;
+}
