@@ -10,7 +10,7 @@ const Card = () => {
         id="progress-bar"
         className="ml-5 mt-2 w-[90%] border-2 bg-white rounded-sm"
       >
-        <div className="w-[30%] h-[4px] bg-gray-700"></div>
+        <div className="w-[69%] h-[4px] bg-gray-700"></div>
       </div>
       <span className="ml-5 text-gray-700 text-xl mt-5">69% completed</span>
       <div className="ml-5 p-1 bg-green-600 w-[150px] rounded-2xl text-center mt-5 text-white shadow-md font-bold hover:cursor-pointer hover:underline ">

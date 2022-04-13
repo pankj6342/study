@@ -8,7 +8,7 @@ const Dashboard = () => {
         id="header"
         className="min-w-screen text-center flex flex-col items-center justify-center text-white text-3xl p-auto bg-gray-600 h-[100px]"
       >
-        Hello Pankaj, Welcome !!
+        Hello Adityabhan Singh, Welcome !!
       </div>
       <span className="text-md hover:text-blue-500 hover:cursor-none">
         Your Recent Courses
