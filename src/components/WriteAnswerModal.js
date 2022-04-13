@@ -1,18 +1,21 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const AskQuestionModal = ({ children }) => {
+const WriteAnswerModal = ({ children, quesData }) => {
   const [show, setShow] = useState(false);
-
   const [data, setData] = useState({
-    questionTitle: "",
-    questionText: "",
-    tag: [],
+    answerText: "",
   });
+  const { quesId, questionText } = quesData;
+
+  const navigate = useNavigate();
   const onChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
+
   const onSubmit = () => {
     console.log(data);
+    navigate(`/answers/${quesId}`);
   };
 
   return !show ? (
@@ -43,42 +46,31 @@ const AskQuestionModal = ({ children }) => {
                 </svg>
               </button>
             </div>
+
+            <div className="mx-6 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg">
+              {questionText}
+            </div>
+            <hr />
             <form
               className="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8"
               onSubmit={onSubmit}
             >
               <h3 className="text-xl font-medium text-gray-900 dark:text-white">
-                Ask a question
+                Write an answer
               </h3>
               <div>
                 <label
                   for=""
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                 >
-                  Question Title
-                </label>
-                <input
-                  type="text"
-                  name="questionTitle"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 min-h-50px"
-                  required={true}
-                  value={data.questionTitle}
-                  onChange={onChange}
-                />
-              </div>
-              <div>
-                <label
-                  for=""
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Question Text
+                  Answer Text
                 </label>
                 <textarea
                   type="text"
-                  name="questionText"
+                  name="answerText"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 min-h-50px"
                   required={true}
-                  value={data.questionText}
+                  value={data.answerText}
                   onChange={onChange}
                 />
               </div>
@@ -86,7 +78,7 @@ const AskQuestionModal = ({ children }) => {
                 type="submit"
                 class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
-                Post Question
+                Post Answer
               </button>
             </form>
           </div>
@@ -96,4 +88,4 @@ const AskQuestionModal = ({ children }) => {
   );
 };
 
-export default AskQuestionModal;
+export default WriteAnswerModal;

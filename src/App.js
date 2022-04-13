@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Discussion from "./components/Discussion";
 import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
+import SingleAnswersPage from "./components/SingleAnswersPage";
+import Courses from "./components/Courses";
 
 function App() {
   return (
@@ -14,10 +16,11 @@ function App() {
         </nav>
         <main className="w-full">
           <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/discussion" element={<Discussion />} />
             <Route path="/profile" element={<Profile />} />
-            {/* <Dashboard /> */}
+            <Route path="/answers/" element={<SingleAnswersPage />} />
+            <Route path="/courses/" element={<Courses />} />
           </Routes>
         </main>
       </div>
