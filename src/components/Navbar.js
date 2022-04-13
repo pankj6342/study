@@ -14,7 +14,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="nav-ele">
-        <a href="/dashboard">Dashboard</a>
+        <a href="/">Dashboard</a>
       </div>
       <div className="nav-ele">
         <a href="/profile">Profile</a>

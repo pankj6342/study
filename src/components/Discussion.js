@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import AskQuestionModal from "./AskQuestionModal";
 import QuestionCard from "./QuestionCard";
 
@@ -7,29 +8,32 @@ const Discussion = () => {
     <div className="min-h-screen bg-gray-300 flex flex-col">
       <div
         id="ask-answer-input"
-        className="flex flex-col mx-auto mt-4 w-[50%] border-black p-4 bg-gray-500 rounded-xl"
+        className="flex flex-col mx-auto mt-4 w-[50%] border-black p-4 bg-green-400 rounded-xl"
       >
         <div className="w-[90%] dp-input flex justify-between">
-          <div
+          <Link
             id="profile-pic"
-            className="h-[40px] w-[40px] rounded-full bg-black"
-          ></div>
+            className="h-[50px] w-[50px] rounded-full"
+            to="/profile"
+          >
+            <img
+              className=""
+              src="https://cdn.codechef.com/sites/default/files/uploads/pictures/9add8f5b7067a81164b7a9116b1dcb79.jpg"
+              alt=""
+            />
+          </Link>
+
           <input
             type="text"
             className="w-4/5 pl-4"
             placeholder="ask your query"
           />
         </div>
-        <div className="flex items-center justify-evenly mt-2 text-white">
+        <div className="flex items-center justify-evenly mt-2 ">
           <AskQuestionModal>
-            <div className="text-white hover:underline hover:cursor-pointer">
-              Ask
-            </div>
+            <div className=" hover:underline hover:cursor-pointer">Ask</div>
           </AskQuestionModal>
-          |
-          <div className="text-white hover:underline hover:cursor-pointer">
-            Answer
-          </div>
+          |<div className=" hover:underline hover:cursor-pointer">Answer</div>
         </div>
       </div>
       <div className="w-full border-2 min-h-screen flex flex-col items-center space-y-2 pt-5">
