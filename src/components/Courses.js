@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import dsbook from "./assets/dsbook.jpg";
 const Courses = ({ courseName }) => {
   const color = "gray";
   const [openTab, setOpenTab] = React.useState(1);
@@ -69,12 +69,12 @@ const Courses = ({ courseName }) => {
               </a>
             </li>
           </ul>
-          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+          <div className="relative grid grid-col-2 min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div
                   className={`${
-                    openTab === 1 ? "flex flex-col" : "hidden"
+                    openTab === 1 ? "grid grid-cols-2" : "hidden"
                   } space-y-2 divide-y-5`}
                   id="link1"
                 >
@@ -87,19 +87,53 @@ const Courses = ({ courseName }) => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
                   ></iframe>
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/videoseries?list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y"
+                    title={courseName}
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/videoseries?list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y"
+                    title={courseName}
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/videoseries?list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y"
+                    title={courseName}
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
                 </div>
-                <div className={openTab === 2 ? "block" : "hidden"} id="link2">
+                <div
+                  className={`${
+                    openTab === 2 ? "grid grid-cols-2" : "hidden"
+                  } space-y-2 divide-y-5`}
+                  id="link2"
+                >
                   <p>
-                    Completely synergize resource taxing relationships via
-                    premier niche markets. Professionally cultivate one-to-one
-                    customer service with robust ideas.
+                    <img src={dsbook} height={200} width={200} alt="" />
+                    <img src={dsbook} height={200} width={200} alt="" />
+                    <img src={dsbook} height={200} width={200} alt="" />
+                    <img src={dsbook} height={200} width={200} alt="" />
                     <br />
                     <br />
-                    Dynamically innovate resource-leveling customer service for
-                    state of the art customer service.
                   </p>
                 </div>
-                <div className={openTab === 3 ? "block" : "hidden"} id="link3">
+                <div
+                  className={openTab === 3 ? "grid grid-cols-2" : "hidden"}
+                  id="link3"
+                >
                   <p>
                     Efficiently unleash cross-media information without
                     cross-media value. Quickly maximize timely deliverables for

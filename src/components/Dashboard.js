@@ -17,10 +17,10 @@ const Dashboard = () => {
         id="recent-courses"
         className="min-w-screen bg-gray-300 shadow-md grid grid-cols-2 gap-2 items-center  min-h-[70vh]"
       >
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card title="Data Structures" />
+        <Card title="Soft Computing" />
+        <Card title="Communications" />
+        <Card title="Networks" />
       </div>
     </div>
   );
