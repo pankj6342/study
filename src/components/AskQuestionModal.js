@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { QuestionContext } from "../context/questionContext";
 
 const AskQuestionModal = ({ children }) => {
   const [show, setShow] = useState(false);
+  const context = useContext(QuestionContext);
+  const addQuestion = context?.addQuestion;
 
   const [data, setData] = useState({
     questionTitle: "",
@@ -13,6 +16,7 @@ const AskQuestionModal = ({ children }) => {
   };
   const onSubmit = () => {
     console.log(data);
+    addQuestion(data);
   };
 
   return !show ? (

@@ -5,36 +5,39 @@ export const QuestionContext = (props) => {
   const quesArrayInitial = [];
   const [questionArray, setQuestionArray] = useState(quesArrayInitial);
   const port = 5000;
-  const host = `http://localhost:${host}`;
+  const host = `http://localhost:${port}`;
 
-  const fetchQuestions = async (
-    url = `${host}/api/questions/fetchallquestions`
-  ) => {
+  const fetchQuestions = async (url = `${host}/question/getAllQuestion`) => {
     var response = await fetch(url, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("token"),
+        // "auth-token": localStorage.getItem("token"),
       },
     });
     const result = await response.json();
-    setQuestionArray(result);
+    setQuestionArray(result.data);
     // return result;
   };
 
   //add a question
-  const addQuestion = async (title, description, tag) => {
-    var response = await fetch(`${host}/api/questions/addQuestion`, {
+  const addQuestion = async (title, description, askedBy, tag) => {
+    var response = await fetch(`${host}/api/questions/createQuestion`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "auth-token": localStorage.getItem("token"),
       },
-      body: JSON.stringify({ title, description, tag }),
+      body: JSON.stringify({
+        title,
+        question: description,
+        askedBy: "62572615e2cd81f52341cf2c",
+        topics: [],
+      }),
     });
 
     const addedquestion = await response.json();
-    if (addedquestion.title && addedquestion.description) {
+    if (addedquestion.title && addedquestion.question) {
       setQuestionArray(questionArray.concat(addedquestion));
     } else alert("Title, Description can not be empty");
   };
@@ -97,7 +100,7 @@ export const QuestionContext = (props) => {
   };
   return (
     <QuesContext.Provider
-      value={{ fetchQuestions, editQuestion, addQuestion, deleteQuestion }}
+      value={{ fetchQuestions, editQuestion, addQuestion, deleteQuestion,questionArray }}
     >
       {props.children}
     </QuesContext.Provider>

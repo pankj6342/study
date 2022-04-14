@@ -2,29 +2,24 @@ import React from "react";
 import { Link } from "react-router-dom";
 import WriteAnswerModal from "./WriteAnswerModal";
 
-const QuestionCard = (props) => {
-  const quesText =
-    "Write an program implementing the least time consuming algorithm to traverse a tree";
-  const quesData = {
-    quesId: "",
-    questionText: quesText,
-  };
+const QuestionCard = (quesData) => {
+  const { questionText, askedBy, quesId, title } = quesData;
 
   return (
     <div className="mt-2 flex flex-col border-[1px] px-2 bg-gray-200">
       <Link
-        to={`/answers/${quesData.quesId}`}
+        to={`/answers/${quesId}`}
         className="text-green-800 text-lg w-[70%] "
       >
-        {quesText}
+        {title}
       </Link>
+      <div className="text-md">{questionText}</div>
       <div className="">
-        asked by:{" "}
         <Link
-          to="/profile"
+          to={`/profile/${askedBy._id}`}
           className="text-blue-700 underline hover:cursor-pointer"
         >
-          Adityabhan Singh
+          {askedBy.name}
         </Link>
       </div>
       <div className="flex items-center space-x-3">
