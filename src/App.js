@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
 import SingleAnswersPage from "./components/SingleAnswersPage";
 import Courses from "./components/Courses";
+import Puzzles from "./components/Puzzles.js";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/answers/" element={<SingleAnswersPage />} />
             <Route path="/courses/" element={<Courses />} />
+            <Route path="/puzzles/" element={<Puzzles />} />
           </Routes>
         </main>
       </div>

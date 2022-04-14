@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./styles/Navbar.css";
 function Navbar() {
   return (
-    <nav className="flex flex-col justify-items-center content-center text-center top-0 left-0 h-screen w-48 bg-green-400">
+    <nav className="flex flex-col justify-items-center content-center text-center top-0 left-0 h-screen w-56 bg-green-400">
       <div>
         <Link to="/profile">
           <img
@@ -23,7 +23,7 @@ function Navbar() {
         <a href="/discussion">Discussion</a>
       </div>
       <div className="nav-ele">
-        <a href="/puzzles">Puzzles</a>
+        <a href="/puzzles">Puzzles <span className="text-sm grey-300">(20Min left)</span></a>
       </div>
     </nav>
   );
