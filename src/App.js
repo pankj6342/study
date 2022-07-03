@@ -7,6 +7,7 @@ import Profile from "./components/Profile";
 import SingleAnswersPage from "./components/SingleAnswersPage";
 import Courses from "./components/Courses";
 import Puzzles from "./components/Puzzles.js";
+import Protected from "./Protected";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Navbar />
         </nav>
         <main className="w-full">
+          {/* <Protected> */}
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/discussion" element={<Discussion />} />
@@ -24,6 +26,7 @@ function App() {
             <Route path="/courses/" element={<Courses />} />
             <Route path="/puzzles/" element={<Puzzles />} />
           </Routes>
+          {/* </Protected> */}
         </main>
       </div>
     </BrowserRouter>

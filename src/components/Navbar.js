@@ -23,7 +23,12 @@ function Navbar() {
         <a href="/discussion">Discussion</a>
       </div>
       <div className="nav-ele">
-        <a href="/puzzles">Puzzles <span className="text-sm text-gray-300">(20Min left)</span></a>
+        <a href="/test">Attempt a Test</a>
+      </div>
+      <div className="nav-ele">
+        <a href="/puzzles">
+          Puzzles <span className="text-sm text-gray-700">(20Min left)</span>
+        </a>
       </div>
     </nav>
   );

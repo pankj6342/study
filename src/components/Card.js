@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = (title) => {
-  const courseData = { courseId: "", courseName: "Data Structures" };
-
+const Card = (props) => {
+  const courseData = { courseId: "", courseName: props.title };
+  
   return (
     <div className="border  bg-white  flex flex-col border-1 h-[90%] w-[70%] rounded-xl">
       <div className="text-4xl pl-5 py-2 bg-blue-400 font-bold rounded-t-xl ">
-        {title}
+        {/* {courseData.courseName} */}
+        {props.title}
       </div>
       <div
         id="progress-bar"
